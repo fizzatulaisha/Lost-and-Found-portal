@@ -1,0 +1,42 @@
+body{margin:0;font-family:Arial;background:#f8f5f0}.container{display:flex;min-height:100vh;align-items:center;justify-content:center}.card{display:flex;background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);max-width:900px;width:100%}.left{flex:1;padding:40px}.right{flex:1;background:#fff7f8;background-image: url(../images/l.png);  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    width: 450px;
+    box-shadow:0 8px 10px rgba(0, 0, 0, 0.12) ;
+ border-radius: 15px; }input{display:block;width:100%;padding:12px;margin:10px 0;border:1px solid #ddd;border-radius:12px;box-sizing:border-box}button{width:100%;padding:12px;background:#ff6b81;color:#fff;border:none;border-radius:12px; cursor: pointer;}a{text-decoration:none;color:#ff6b81}
+.flash-success{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.flash-error{
+    background:#f8d7da;
+    color:#721c24;
+    border:1px solid #f5c6cb;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+    text-align:center;
+}
+.l{
+    background-image: url(../images/l.png);
+}
+.report {
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0%, 80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

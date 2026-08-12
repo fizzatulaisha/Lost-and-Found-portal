@@ -1,0 +1,207 @@
+<%- include ("partials/header")%>
+
+</head>
+  <body>
+    <%- include ("partials/navbar")%> 
+    <section class="hero">
+      <div class="hero-left">
+        <h3>
+          Reuniting <br />
+          what <span>matters.</span>
+          <i class="fa-regular fa-heart"></i>
+        </h3>
+
+        <p>
+          A community platform to help people <br />
+          find lost items and return what's needed.
+        </p>
+
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search lost or found items..." />
+          <button>Search</button>
+        </div>
+
+        <div class="tags">
+          <span>Popular searches </span>
+          <span>Wallet</span>
+          <span>Phone</span>
+          <span>keys</span>
+          <span>Backpack</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="image-box">
+          <img src="images/hero.jpeg" alt="Lost and Found" />
+
+          <div class="floating-card">
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div>
+              <h3>Be Kind.</h3>
+
+              <p>
+                Return happiness.<br />
+                Small actions make a big impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="report-section">
+      <div class="report-card lost-card">
+        <div class="icon">
+          <i data-lucide="shopping-bag"></i>
+        </div>
+
+        <div class="content">
+          <h2>Report Lost Item</h2>
+          <p>
+            Lost something? Share details <br />and help others return it to
+            you.
+          </p>
+          <button>
+          <a href="/report" style="text-decoration: none; color:white;">Report Lost</a>
+            
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <svg class="trail" viewBox="0 0 120 120">
+          <path
+            d="M15 20
+           C70 20, 30 90, 90 90
+           S100 40, 110 70"
+            fill="none"
+            stroke="#F4A6A6"
+            stroke-width="2.5"
+            stroke-dasharray="6 6"
+            stroke-linecap="round"
+          />
+          <circle cx="15" cy="20" r="4" fill="#F4A6A6" />
+        </svg>
+      </div>
+
+      <div class="report-card found-card">
+        <div class="icon">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <div class="content">
+          <h2>Report Found Item</h2>
+          <p>
+            Found an item? Report it and <br />help reunite it with its owner.
+          </p>
+          <button >
+            <a href="/report" style="text-decoration: none; color:white;">Report Found</a>
+            
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <svg class="trail" viewBox="0 0 120 120">
+          <path
+            d="M15 20
+           C70 20, 30 90, 90 90
+           S100 40, 110 70"
+            stroke="#8DBB9B"
+            fill="none"
+            stroke-width="2.5"
+            stroke-dasharray="6 6"
+            stroke-linecap="round"
+          />
+          <circle cx="15" cy="20" r="4" fill="#8DBB9B" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- <section class="working">
+      <div>
+        <div class="heading">
+          <h3>How it Works</h3>
+          <div class="line"></div>
+        </div>
+        <div class="exp">
+          <div class="styling">
+            <div class="number one">1</div>
+            <div class="ic" id="one">
+              <i data-lucide="search"></i>
+            </div>
+            <div class="t">
+              <p>
+                <b>Search or browse</b> <br />
+                Look for lost items or<br />
+                browse recently <br />found items.
+              </p>
+            </div>
+          </div>
+
+          <div class="styling">
+            <div class="number two">2</div>
+            <div class="ic" id="two">
+              <i data-lucide="pencil"></i>
+            </div>
+            <div class="t">
+              <p>
+                <b>Report</b> <br />
+                Report a lost or <br />found item in just <br />
+                a few simple steps.
+              </p>
+            </div>
+          </div>
+          <div class="styling">
+            <div class="number three">3</div>
+
+            <div class="ic" id="three">
+              <i data-lucide="bell-ring"></i>
+            </div>
+            <div class="t">
+              <p>
+                <b>Get Notified</b> <br />
+                We'll notify<br /> you when there's <br />a match.
+              </p>
+            </div>
+          </div>
+          <div class="styling">
+            <div class="number four">4</div>
+
+            <div class="ic" id="four">
+              <i data-lucide="heart-handshake"></i>
+            </div>
+            <div class="t">
+              <p>
+                <b>Reunite</b> <br />
+                Connect, verify <br />
+                and get your item <br />
+                back safely
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+ <footer>
+      <div class="foot">
+        <div>
+          <img src="images/hath.jpeg" alt="hands" height="130px" width="210px" />
+        </div>
+        <div>
+          <h3>Together, we can make a difference.</h3>
+          <p>
+            Help bring happiness back to <br>those who've lost something important
+          </p>
+        </div>
+        <div class="contact">
+          <button><a href="/about" style="text-decoration: none; color:white;">Contact Us</a>
+             <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+   <%- include ("partials/footer")%>
+  </body>
+  <script>
+    lucide.createIcons();
+  </script>
+</html>

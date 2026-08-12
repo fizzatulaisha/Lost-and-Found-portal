@@ -1,0 +1,70 @@
+
+<%- include ("partials/header")%>
+<link rel="stylesheet" href="/css/report.css">
+
+  </head>
+  <body>
+    <%- include ("partials/navbar")%>
+
+    <% if (success && success.length > 0) { %>
+    <div class="flash flash-success">
+        <%= success %>
+    </div>
+<% } %>
+
+
+<% if (error && error.length > 0) { %>
+    <div class="flash flash-error">
+        <%= error %>
+    </div>
+<% } %>
+
+<section class="hero "> <div class="hero-left">
+    <h2>
+      Report an
+      <span> item</span>
+    </h2>
+    <p >Help reunite belongings with their <br>rightful owners by providing accurate details.</p>
+     
+  </div>
+ <div class="im"></div>
+</section>
+<div class="card">
+<form action="/report" method="post" enctype="multipart/form-data">
+<div class="row" ><p> &nbsp;What are you reporting?</p></div>
+<div class="report-type">
+    <label class="report-option">
+        <input type="radio" name="status" value="Lost">
+        <span>Lost Item</span>
+    </label>
+
+    <label class="report-option">
+        <input type="radio" name="status" value="Found">
+        <span>Found Item</span>
+    </label>
+</div>
+<input  name="itemName" placeholder="Item name" required>
+<div class="row"><select name="category" required>
+    <option value="" selected disabled>Select Category</option>
+    <option value="accessories">Electronics</option>
+    <option value="bags">Bags</option>
+    <option value="wallet">Wallet</option>
+    <option value="documents">Documents</option>
+    <option value="keys">Keys</option>
+    <option value="others">Others</option>
+</select><input type="date" name="date"></div>
+<input name="loc" placeholder="Location" required >
+<textarea name="des" placeholder="Description"></textarea>
+<div class="upload"><div> Drag & Drop Images</div> <div style="margin-left: 90px;"> <input type="file" multiple name="image" ></div> </div>
+
+<input name="phone" type="tel" placeholder="Phone Number" required>
+<textarea name="note" placeholder="Additional Notes"></textarea>
+<button class="b">Report Item</button>
+</form></div>
+<%- include ("partials/footer")%>
+
+</body>
+  <script>
+    lucide.createIcons();
+  </script>
+</html>

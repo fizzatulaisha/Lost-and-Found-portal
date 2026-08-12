@@ -1,0 +1,227 @@
+
+.navbar {
+  display: flex;
+  text-transform: none;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  padding: 25px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logo .lucide {
+  stroke: #ff6b81;
+}
+.nav {
+  display: flex;
+  gap: 35px;
+}
+.nav a {
+  text-decoration: none;
+
+  color: #333;
+  font-weight: 600;
+
+  font-size: 18px;
+  transition: 0.3s;
+}
+.nav a:hover {
+  color: #ff6b81;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right i {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.ls-btn {
+  background: #12233d;
+  color: white;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+  text-align: center;
+  min-width: 110px;
+  justify-content: center ;
+
+}
+.ls-btn:hover {
+  background: #243b5f;
+}
+ body{color:black}
+
+.active{font-weight:bold}
+.hero{display: flex; flex-direction: row; margin-top: 0; margin-bottom: 20px; }
+.im{
+   background-image: url("../images/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+margin-right: 70px;
+    height: 270px;
+    width: 450px;
+    box-shadow:0 8px 10px rgba(0, 0, 0, 0.12) ;
+ border-radius: 17px;
+}
+/* .hero-left{
+  padding-left: 90px;
+
+} */
+.card{max-width:900px;margin:10px auto;padding:40px; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);border-radius: 18px;
+  }
+input,select,textarea{width:100%;padding:12px;margin:10px 0;border:1px solid #cdbfa7;box-sizing:border-box;border-radius: 20px;
+  border:#14213d;}
+.row{display:flex;gap:15px;align-items:center}
+.upload{border:2px dashed #14213d;padding:30px;border-radius:20px; margin: 10px auto; background-color: #fff; display: flex ; justify-content: center; 
+  align-items: center; text-align: center; flex-direction: column;
+}
+button{width:100%;padding:14px;background:#ff6b81;color:#fff;border:none;border-radius:20px;font-size:16px;align-items: center;} 
+.b{
+  padding-left: 45%;
+}
+
+  .report-type{
+    display: flex;
+    gap: 20px;
+}
+
+.report-option{
+    flex: 1;
+    display: flex;
+    align-items: center;
+               /* Space between radio and text */
+    padding: 10px 10px;
+    border: 0 solid #14213d;
+    background-color: #fff;
+    border-radius: 17px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+/* .report-option input[type="radio"]{
+    width: 18px;
+    height: 18px;
+    outline: none;
+    margin: 0 10px;
+    accent-color: #ff6b81; 
+}
+.report-option input[type="radio"]:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.report-option input[type="radio"]:focus-visible{
+    outline: none;
+    box-shadow: none;
+} */
+.hero-left {
+  flex: 1;
+  margin-left: 70px;
+}
+
+.hero-left h2 {
+  font-size: 72px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #14213d;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.hero-left h2 span {
+  color: #ff6b81;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.hero-left p {
+  margin: 30px 0;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.report-option input[type="radio"]{
+    /* appearance: none;
+    -webkit-appearance: none; */
+
+    width:14px;
+    height:14px;
+margin: 0 10px;
+padding: 5px;
+    border:2px solid black;
+    border-radius:50%;
+    background:white;
+    position:relative;
+    cursor:pointer;
+}
+
+.report-option input[type="radio"]:checked::after{
+    content:"";
+    width:11px;
+    height:11px;
+    
+    background:#ff6b81;
+    border-radius:50%;
+    border:2px solid #ff6b81;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.flash {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* Success */
+.flash-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+
+/* Error */
+.flash-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}

@@ -1,0 +1,200 @@
+<%- include("partials/header") %>
+
+<link rel="stylesheet" href="/css/edit.css">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+
+<div class="edit-container">
+
+    <div class="edit-card">
+
+        <div class="edit-heading">
+            <h1>Edit Item</h1>
+            <p>Update the information about your reported item.</p>
+        </div>
+
+
+        <form
+            action="/items/<%= item._id %>?_method=PUT"
+            method="POST"
+            
+        >
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label for="status">Status</label>
+
+                <select name="status" id="status" required>
+
+                    <option
+                        value="Lost"
+                        <%= item.status === "Lost" ? "selected" : "" %>
+                    >
+                        Lost
+                    </option>
+
+                    <option
+                        value="Found"
+                        <%= item.status === "Found" ? "selected" : "" %>
+                    >
+                        Found
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Item Name -->
+
+            <div class="form-group">
+
+                <label for="itemName">Item Name</label>
+
+                <input
+                    type="text"
+                    id="itemName"
+                    name="itemName"
+                    value="<%= item.itemName %>"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Category -->
+
+            <div class="form-group">
+
+                <label for="category">Category</label>
+
+                <input
+                    type="text"
+                    id="category"
+                    name="category"
+                    value="<%= item.category %>"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Date -->
+
+            <div class="form-group">
+
+                <label for="date">Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value="<%= item.date ? new Date(item.date).toISOString().split('T')[0] : '' %>"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Location -->
+
+            <div class="form-group">
+
+                <label for="loc">Location</label>
+
+                <input
+                    type="text"
+                    id="loc"
+                    name="loc"
+                    value="<%= item.loc %>"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Description -->
+
+            <div class="form-group">
+
+                <label for="des">Description</label>
+
+                <textarea
+                    id="des"
+                    name="des"
+                    rows="5"
+                    required
+                ><%= item.des %></textarea>
+
+            </div>
+
+
+            <!-- Phone -->
+
+            <div class="form-group">
+
+                <label for="phone">Phone</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value="<%= item.phone %>"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Note -->
+
+            <div class="form-group">
+
+                <label for="note">Additional Note</label>
+
+                <textarea
+                    id="note"
+                    name="note"
+                    rows="3"
+                ><%= item.note || "" %></textarea>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="form-actions">
+
+                <a href="/browse" class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit" class="update-btn">
+                    Update Item
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<%- include ("partials/footer")%>
+  </body>
+   <script>
+    lucide.createIcons();
+
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="/css/auth.css"></head><body><div class="container"><div class="card"> <div class="left"><% if (error.length>0){%>
+    <div class=" report flash-error">
+      <%=error[0]%>
+    </div>
+
+  <%}%>
+   <% if (success.length>0){%>
+    <div class=" report flash-success">
+      <%=success[0]%>
+    </div>
+
+  <%}%><h1>Sign Up</h1><form action="/signup" method="POST">
+    
+  
+  <input type="text" name="name" placeholder="Full Name" required><input type="email" placeholder="Email" name="email" required><input type="password" placeholder="Password" name="pass" required><input type="password" placeholder="Confirm Password" name="cpass" required><button type="submit">Create Account</button><p>Already have an account? <a href="/login">Login</a></p></div></form><div class="right" style="margin-top:25px ;margin-right: 27px; height:400px"></div></div></div>
+<script>
+    setTimeout(() => {
+        const alert = document.querySelector(".alert");
+        if (alert) {
+            alert.style.display = "none";
+        }
+    }, 3000);
+</script></body></html>

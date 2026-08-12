@@ -1,0 +1,122 @@
+<%- include ("partials/header")%>
+<link rel="stylesheet" href="/css/about.css">
+
+  </head>
+  <body>
+    <%- include ("partials/navbar")%> 
+
+ <% if (success && success.length > 0) { %>
+    <div class="flash flash-success">
+        <%= success %>
+    </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+    <div class="flash flash-error">
+        <%= error %>
+    </div>
+<% } %>
+<section class="hero">
+      <div class="hero-left">
+        <h3>
+          We're here to<br />
+          <span>help.</span>
+          <i class="fa-regular fa-heart" id="heart"></i>
+        </h3>
+
+        <p>
+          Have a question, suggestion or need support? <br />
+          We'd love to hear from you. <br> Your feedback helpus us improve the platform <br>and serve you better.
+        </p>
+
+      </div>
+      <div class="hero-right">
+        <div class="image-box">
+          <img src="images/hero.jpeg" alt="Lost and Found" />
+
+          <div class="floating-card">
+            <div class="heart">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div>
+              <h3>Be Kind.</h3>
+
+              <p>
+                Return happiness.<br />
+                Small actions make a big impact.
+              </p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="Contact">
+
+<div>
+<div class="mail">
+  <div class="mailic"><i data-lucide="mail"></i></div>
+  <div><p><b>Email Us</b><br>fizzatulaisha@gmail.com</p></div>
+</div>
+<div class="mail">
+   <div class="mailic"><i data-lucide="phone"></i></div>
+  <div><p><b>Contact Us</b><br>0315-4489786</p></div>
+</div>
+<div class="mail">
+   <div class="mailic"><i data-lucide="map-pin"></i></div>
+  <div><p><b>Visit Us</b><br>PUCIT,University of the <br>Punjab, Lahore</p></div>
+</div>
+<div class="bndy">
+
+</div>
+</div>
+
+<div>
+<form action="/about" method="post">
+ 
+<div class="hero-left">
+        <h3>
+          Send us a
+          <span>message</span>
+        </h3>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+</div>
+<div class="nail">
+  <div><label for="name" >&nbsp;&nbsp; Your Name</label> <br>
+        <input type="text" placeholder="Enter your name" id="name" name="name" class="style" required></div>
+  
+        <div> <label for="email" > &nbsp;&nbsp;Your Email</label> <br>
+        <input type="email" placeholder="Enter your email" id="email" name="email" class="style" required></div>
+        
+</div>
+
+<div>
+  <label for="subject" >&nbsp;Subject</label><br>
+        <input type="text" placeholder="Enter subject" id="subject" name="subject" class="style" required>
+</div>
+<div>
+  <label for="message">&nbsp; Message</label><br>
+<textarea id="message" name="message" rows="7" cols="30" placeholder="Type your message here..."  class="txt" required></textarea>
+</div>
+        <div><button type="submit" class="style" id="btn" >Submit</button></div>
+
+</form>
+</div>
+
+
+</section>
+
+    <%- include ("partials/footer")%>
+  </body>
+   <script>
+    lucide.createIcons();
+  
+    setTimeout(() => {
+        const alert = document.querySelector(".report");
+        if (alert) {
+            alert.style.display = "none";
+        }
+    }, 3000);
+  </script>
+  </html>
