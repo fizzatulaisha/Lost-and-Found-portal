@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const cloudinary = require("../config/cloudinary");
 const Item = require("../models/Item");
 const upload = require("../config/multer");
 
@@ -10,42 +10,70 @@ router.post(
     "/report",
     upload.single("image"),
     async (req, res) => {
+        try {
+            const {
+                status,
+                itemName,
+                category,
+                date,
+                loc,
+                des,
+                phone,
+                note
+            } = req.body;
 
-        const {
-            status,
-            itemName,
-            category,
-            date,
-            loc,
-            des,
-            phone,
-            note
-        } = req.body;
+            if (!req.file) {
+                req.flash("error", "Please upload an image.");
+                return res.redirect("/report");
+            }
 
-        const item = new Item({
+            const result = await new Promise((resolve, reject) => {
+                const stream = cloudinary.uploader.upload_stream(
+                    { folder: "lost-and-found" },
+                    (error, result) => {
+                        if (error) {
+                            reject(error);
+                        } else {
+                            resolve(result);
+                        }
+                    }
+                );
 
-            status,
-            itemName,
-            category,
-            date,
-            loc,
-            des,
-            phone,
-            note,
+                stream.end(req.file.buffer);
+            });
 
-            image: req.file.filename,
+            const item = new Item({
+                status,
+                itemName,
+                category,
+                date,
+                loc,
+                des,
+                phone,
+                note,
+                image: result.secure_url,
+                owner: req.session.userId
+            });
 
-            owner: req.session.userId
-        });
+            await item.save();
 
-        await item.save();
+            req.flash(
+                "success",
+                "Item reported successfully!"
+            );
 
-        req.flash(
-            "success",
-            "Item reported successfully!"
-        );
+            res.redirect("/browse");
 
-        res.redirect("/browse");
+        } catch (err) {
+            console.log("REPORT ERROR:", err);
+
+            req.flash(
+                "error",
+                "Unable to report item"
+            );
+
+            res.redirect("/report");
+        }
     }
 );
 
