@@ -4,10 +4,10 @@ const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("MongoDB Connected");
+    } catch (error) {
+        console.error("MongoDB CONNECTION ERROR:", error);
+        throw error;
     }
-    catch(error){
-        console.log(error);
-    }
-}
+};
 
 module.exports = connectDB;
